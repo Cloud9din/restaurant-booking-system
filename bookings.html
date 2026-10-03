@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Restaurant reservation management dashboard."
+  >
+
+  <title>
+    Booking Dashboard | ReserveTable
+  </title>
+
+
+  <!-- Google Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- Main CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="header">
+
+    <div class="container nav-container">
+
+      <a
+        href="index.html"
+        class="logo"
+      >
+        Reserve<span>Table</span>
+      </a>
+
+
+      <nav class="navigation">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="index.html#booking">
+          New Booking
+        </a>
+
+        <a
+          href="bookings.html"
+          class="active-link"
+        >
+          Dashboard
+        </a>
+
+      </nav>
+
+
+      <a
+        href="index.html#booking"
+        class="nav-button"
+      >
+        + New Booking
+      </a>
+
+
+      <button
+        class="mobile-menu-button"
+        id="mobile-menu-button"
+        aria-label="Open navigation menu"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       MAIN DASHBOARD
+  ========================== -->
+
+  <main class="dashboard-main">
+
+
+    <!-- Dashboard Heading -->
+
+    <section class="dashboard-intro">
+
+      <div class="container">
+
+        <span class="section-label">
+          RESERVATION MANAGEMENT
+        </span>
+
+        <div class="dashboard-title-row">
+
+          <div>
+
+            <h1>
+              Booking Dashboard
+            </h1>
+
+            <p>
+              View and manage restaurant reservations.
+            </p>
+
+          </div>
+
+
+          <a
+            href="index.html#booking"
+            class="primary-button dashboard-add-button"
+          >
+            + Add Reservation
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         STATISTICS
+    ========================== -->
+
+    <section class="container">
+
+      <div class="stats-grid">
+
+
+        <!-- Total Bookings -->
+
+        <article class="stat-card">
+
+          <span class="stat-label">
+            Total Bookings
+          </span>
+
+          <strong id="total-bookings">
+            0
+          </strong>
+
+          <span class="stat-description">
+            All reservations
+          </span>
+
+        </article>
+
+
+
+        <!-- Today's Bookings -->
+
+        <article class="stat-card">
+
+          <span class="stat-label">
+            Today's Bookings
+          </span>
+
+          <strong id="today-bookings">
+            0
+          </strong>
+
+          <span class="stat-description">
+            Reservations today
+          </span>
+
+        </article>
+
+
+
+        <!-- Total Guests -->
+
+        <article class="stat-card">
+
+          <span class="stat-label">
+            Total Guests
+          </span>
+
+          <strong id="total-guests">
+            0
+          </strong>
+
+          <span class="stat-description">
+            Guests booked
+          </span>
+
+        </article>
+
+
+
+        <!-- Confirmed -->
+
+        <article class="stat-card">
+
+          <span class="stat-label">
+            Confirmed
+          </span>
+
+          <strong id="confirmed-bookings">
+            0
+          </strong>
+
+          <span class="stat-description">
+            Confirmed reservations
+          </span>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BOOKINGS SECTION
+    ========================== -->
+
+    <section class="container bookings-section">
+
+
+      <!-- Toolbar -->
+
+      <div class="dashboard-toolbar">
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+          <label
+            for="booking-search"
+            class="sr-only"
+          >
+            Search bookings
+          </label>
+
+          <input
+            type="search"
+            id="booking-search"
+            placeholder="Search by name, email, phone or booking ID..."
+          >
+
+        </div>
+
+
+
+        <!-- Filters -->
+
+        <div class="filter-group">
+
+
+          <select
+            id="status-filter"
+            aria-label="Filter by booking status"
+          >
+
+            <option value="all">
+              All Statuses
+            </option>
+
+            <option value="Confirmed">
+              Confirmed
+            </option>
+
+            <option value="Cancelled">
+              Cancelled
+            </option>
+
+          </select>
+
+
+          <select
+            id="sort-filter"
+            aria-label="Sort bookings"
+          >
+
+            <option value="newest">
+              Newest First
+            </option>
+
+            <option value="date">
+              Booking Date
+            </option>
+
+            <option value="name">
+              Customer Name
+            </option>
+
+          </select>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Dashboard Card -->
+
+      <div class="bookings-panel">
+
+
+        <!-- Panel Heading -->
+
+        <div class="bookings-panel-header">
+
+          <div>
+
+            <span class="form-label">
+              BOOKINGS
+            </span>
+
+            <h2>
+              Reservations
+            </h2>
+
+          </div>
+
+
+          <span
+            class="booking-result-count"
+            id="booking-result-count"
+          >
+            0 bookings
+          </span>
+
+        </div>
+
+
+
+        <!-- Table -->
+
+        <div class="table-wrapper">
+
+          <table class="bookings-table">
+
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Booking
+                </th>
+
+                <th>
+                  Customer
+                </th>
+
+                <th>
+                  Date & Time
+                </th>
+
+                <th>
+                  Guests
+                </th>
+
+                <th>
+                  Status
+                </th>
+
+                <th>
+                  Actions
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+
+            <tbody id="bookings-table-body">
+
+              <!--
+                JavaScript will add
+                reservations here
+              -->
+
+            </tbody>
+
+
+          </table>
+
+        </div>
+
+
+
+        <!-- Empty State -->
+
+        <div
+          class="empty-bookings"
+          id="empty-bookings"
+        >
+
+          <div class="empty-icon">
+            🍽️
+          </div>
+
+          <h3>
+            No reservations yet
+          </h3>
+
+          <p>
+            New restaurant bookings will appear here.
+          </p>
+
+          <a
+            href="index.html#booking"
+            class="primary-button"
+          >
+            Create First Booking
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       EDIT BOOKING MODAL
+  ========================== -->
+
+  <div
+    class="modal"
+    id="edit-modal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-overlay"></div>
+
+
+    <div
+      class="modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="edit-modal-title"
+    >
+
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="form-label">
+            EDIT RESERVATION
+          </span>
+
+          <h2 id="edit-modal-title">
+            Update Booking
+          </h2>
+
+        </div>
+
+
+        <button
+          type="button"
+          id="close-modal"
+          class="modal-close"
+          aria-label="Close edit form"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+
+      <form id="edit-booking-form">
+
+
+        <input
+          type="hidden"
+          id="edit-id"
+        >
+
+
+        <div class="form-grid">
+
+
+          <!-- Name -->
+
+          <div class="form-group full-width">
+
+            <label for="edit-name">
+              Customer Name
+            </label>
+
+            <input
+              type="text"
+              id="edit-name"
+              required
+            >
+
+          </div>
+
+
+
+          <!-- Email -->
+
+          <div class="form-group">
+
+            <label for="edit-email">
+              Email
+            </label>
+
+            <input
+              type="email"
+              id="edit-email"
+              required
+            >
+
+          </div>
+
+
+
+          <!-- Phone -->
+
+          <div class="form-group">
+
+            <label for="edit-phone">
+              Phone
+            </label>
+
+            <input
+              type="tel"
+              id="edit-phone"
+              required
+            >
+
+          </div>
+
+
+
+          <!-- Date -->
+
+          <div class="form-group">
+
+            <label for="edit-date">
+              Date
+            </label>
+
+            <input
+              type="date"
+              id="edit-date"
+              required
+            >
+
+          </div>
+
+
+
+          <!-- Time -->
+
+          <div class="form-group">
+
+            <label for="edit-time">
+              Time
+            </label>
+
+            <select
+              id="edit-time"
+              required
+            >
+
+              <option value="17:30">
+                17:30
+              </option>
+
+              <option value="18:00">
+                18:00
+              </option>
+
+              <option value="18:30">
+                18:30
+              </option>
+
+              <option value="19:00">
+                19:00
+              </option>
+
+              <option value="19:30">
+                19:30
+              </option>
+
+              <option value="20:00">
+                20:00
+              </option>
+
+              <option value="20:30">
+                20:30
+              </option>
+
+              <option value="21:00">
+                21:00
+              </option>
+
+              <option value="21:30">
+                21:30
+              </option>
+
+              <option value="22:00">
+                22:00
+              </option>
+
+            </select>
+
+          </div>
+
+
+
+          <!-- Guests -->
+
+          <div class="form-group">
+
+            <label for="edit-guests">
+              Guests
+            </label>
+
+            <input
+              type="number"
+              id="edit-guests"
+              min="1"
+              max="50"
+              required
+            >
+
+          </div>
+
+
+
+          <!-- Status -->
+
+          <div class="form-group">
+
+            <label for="edit-status">
+              Status
+            </label>
+
+            <select
+              id="edit-status"
+              required
+            >
+
+              <option value="Confirmed">
+                Confirmed
+              </option>
+
+              <option value="Cancelled">
+                Cancelled
+              </option>
+
+            </select>
+
+          </div>
+
+
+
+          <!-- Requests -->
+
+          <div class="form-group full-width">
+
+            <label for="edit-requests">
+              Special Requests
+            </label>
+
+            <textarea
+              id="edit-requests"
+              rows="4"
+            ></textarea>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="secondary-button"
+            id="cancel-edit"
+          >
+            Cancel
+          </button>
+
+
+          <button
+            type="submit"
+            class="booking-button"
+          >
+            Save Changes
+          </button>
+
+        </div>
+
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       DELETE CONFIRMATION
+  ========================== -->
+
+  <div
+    class="modal"
+    id="delete-modal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-overlay"></div>
+
+
+    <div class="modal-card delete-modal-card">
+
+      <div class="delete-icon">
+        !
+      </div>
+
+      <h2>
+        Delete reservation?
+      </h2>
+
+      <p>
+        This booking will be permanently removed.
+      </p>
+
+
+      <div class="modal-actions">
+
+        <button
+          type="button"
+          class="secondary-button"
+          id="cancel-delete"
+        >
+          Keep Booking
+        </button>
+
+        <button
+          type="button"
+          class="delete-confirm-button"
+          id="confirm-delete"
+        >
+          Delete
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <a
+        href="index.html"
+        class="logo footer-logo"
+      >
+        Reserve<span>Table</span>
+      </a>
+
+
+      <p>
+        Restaurant Booking Management Dashboard
+      </p>
+
+
+      <p>
+        Built with HTML, CSS & JavaScript
+      </p>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- Dashboard JavaScript -->
+
+  <script src="bookings.js"></script>
+
+
+</body>
+
+</html>
