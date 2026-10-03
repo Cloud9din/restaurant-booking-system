@@ -94,3 +94,91 @@ Display Confirmation
 Booking Dashboard
         ↓
 Search / Filter / Edit / Cancel / Delete
+
+
+---
+
+## 📁 Project Structure
+
+```text
+restaurant-booking-system/
+├── index.html
+├── bookings.html
+├── style.css
+├── script.js
+├── bookings.js
+├── booking-page.png
+├── dashboard.png
+└── README.md
+```
+
+---
+
+## 💾 Data Storage
+
+The application uses browser **LocalStorage** to store reservation data.
+
+Bookings remain available after the page is refreshed, but the data is stored only in the browser and device where the reservation was created.
+
+---
+
+## 🎯 What I Learned
+
+This project helped me improve my skills in:
+
+- HTML5 and semantic page structure
+- Responsive CSS design
+- JavaScript DOM manipulation
+- Form validation
+- JavaScript objects and arrays
+- LocalStorage and JSON
+- Search and filtering
+- Sorting data
+- Editing and deleting stored records
+- Creating modal windows
+- Building responsive management dashboards
+- Git and GitHub version control
+
+---
+
+## 🔮 Future Improvements
+
+Future versions could include:
+
+- Database integration
+- Firebase or backend API
+- Secure staff login
+- Email booking confirmations
+- Table availability checking
+- Real-time reservation management
+- Customer cancellation links
+
+
+
+## 📌 Project Status
+
+**Working Version**
+
+- Customer reservations ✅
+- Form validation ✅
+- Booking references ✅
+- LocalStorage ✅
+- Management dashboard ✅
+- Search and filtering ✅
+- Sorting ✅
+- Edit reservations ✅
+- Cancel reservations ✅
+- Delete reservations ✅
+- Responsive design ✅
+
+---
+
+## 👨‍💻 Developer
+
+**Abu Lashkor**
+
+GitHub: **Cloud9din**
+
+Built as part of my web development portfolio using **HTML, CSS and JavaScript**.
+
+---
