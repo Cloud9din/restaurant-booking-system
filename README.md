@@ -11,11 +11,9 @@ This project was created as part of my web development portfolio to demonstrate 
 ## 🌐 Live Demo
 
 **Live Website:**  
-`YOUR-GITHUB-PAGES-LINK-HERE`
 
-> Replace the link above with your GitHub Pages URL once deployment is complete.
+https://github.com/Cloud9din/restaurant-booking-system
 
----
 
 ## ✨ Features
 
