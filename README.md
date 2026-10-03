@@ -12,7 +12,7 @@ This project was created as part of my web development portfolio to demonstrate 
 
 **Live Website:**  
 
-https://github.com/Cloud9din/restaurant-booking-system
+[https://github.com/Cloud9din/restaurant-booking-system](https://cloud9din.github.io/restaurant-booking-system/)
 
 
 ## ✨ Features
