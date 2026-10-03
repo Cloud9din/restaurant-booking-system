@@ -14,6 +14,19 @@ This project was created as part of my web development portfolio to demonstrate 
 
 [https://github.com/Cloud9din/restaurant-booking-system](https://cloud9din.github.io/restaurant-booking-system/)
 
+## 📸 Screenshots
+
+### Reservation Page
+
+The customer-facing reservation page allows users to select a date, time, number of guests and provide their contact details.
+
+![Restaurant Booking Page](booking-page.png)
+
+### Booking Management Dashboard
+
+The management dashboard displays reservation statistics and allows bookings to be searched, filtered, edited, cancelled and deleted.
+
+![Booking Management Dashboard](dashboard.png)
 
 ## ✨ Features
 
