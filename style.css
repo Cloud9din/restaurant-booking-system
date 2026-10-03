@@ -339,13 +339,7 @@ img {
 
   font-family: "Playfair Display", serif;
 
-  font-size:
-    clamp(
-      3.15rem,
-      6vw,
-      5.85rem
-    );
-
+font-size: clamp(3rem, 5vw, 5rem);
   line-height: 0.98;
 
   letter-spacing: -0.055em;
