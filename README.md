@@ -78,7 +78,7 @@ The management dashboard displays reservation statistics and allows bookings to 
 
 The application follows this simple booking process:
 
-```text
+
 Customer Booking Form
         ↓
 Form Validation
@@ -100,7 +100,7 @@ Search / Filter / Edit / Cancel / Delete
 
 ## 📁 Project Structure
 
-```text
+
 restaurant-booking-system/
 ├── index.html
 ├── bookings.html
